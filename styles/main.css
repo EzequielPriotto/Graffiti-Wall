@@ -1,0 +1,215 @@
+/*
+  NO HACE FALTA TOCAR NADA DE ACÁ PARA QUE EL EJEMPLO FUNCIONE,
+  PERO PUEDEN CAMBIAR ESTILOS A SU GUSTO.
+  Nota: Al final de todo hay 2 animaciones pre-definidas.
+        Pueden analizar el código y buscar un poco más en Internet
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: blueviolet;
+}
+h1 {
+  font-family: "Sedgwick Ave Display", cursive;
+  filter: drop-shadow(0 0 1rem white);
+  font-size: 3rem;
+}
+
+#wall {
+  height: 100%;
+  width: 100%;
+  background: url("../img/brickwall.jpg");
+  /* background: url("../img/brickwall2.jpg"); */
+  background-size: cover;
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(12rem, 100%), 1fr));
+  grid-auto-rows: 200px;
+  overflow: auto;
+  box-shadow: 0px 0px 20px rgb(32, 32, 32);
+}
+
+.mensaje {
+  position: relative;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 1.75rem;
+  text-shadow: 0px 0px 2px black, 0px 0px 8px crimson, 0px 0px 1rem #15448e;
+  
+}
+.mensaje.graffiti {
+  display: grid;
+  align-content: center;
+}
+.mensaje.graffiti p{
+  transform: rotateZ(-25deg);
+}
+
+.mensaje.poster {
+  padding-left: 15%;
+  background-color: rgb(246, 209, 88);
+  clip-path: polygon(8% 49%, 5% 5%, 100% 0, 95% 46%, 95% 88%, 63% 92%, 0 100%);
+}
+
+ .close:hover {
+  transform: scale(2);
+  color: hotpink;
+}
+
+.close {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.4s;
+  z-index: 9;
+}
+
+#alta-graffiti {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+
+#alta-graffiti form {
+  padding: 1rem;
+  min-height: 50%;
+  border-radius: 1rem;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.582);
+  box-shadow: 0 0px 32px 0 rgba(24, 140, 248, 0.37);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: "Roboto", cursive;
+}
+#alta-graffiti fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+#alta-graffiti label {
+  text-align: center;
+}
+#alta-graffiti *[type="submit"] {
+  padding: 0.5rem 1rem;
+  margin: auto;
+}
+
+
+#is-poster{
+  display: none;
+}
+
+#is-poster + label{
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 0.5rem 0px aliceblue;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .8s, box-shadow .6s;
+}
+#is-poster + label:hover{
+  
+  box-shadow: 0 0 0.85rem 4px aliceblue;
+}
+
+#is-poster+ label:after{
+  content: " graffiti 🥫";
+}
+#is-poster:checked + label{
+  background-color: #15448e;
+  color: aliceblue;
+}
+#is-poster:checked + label:after{
+  content: ' poster 📄';
+}
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+  #wall {
+    width: 50%;
+  }
+  #alta-graffiti {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  #wall {
+    width: 60%;
+  }
+  #alta-graffiti {
+    width: 35%;
+  }
+}
+
+
+/* ANIMACION */
+
+@keyframes skewed {
+  0%,
+  100% {
+    transform: skew(45deg);
+  }
+  25% {
+    transform: skew(-10deg);
+  }
+  50% {
+    transform: skew(0deg);
+  }
+  75% {
+    transform: skew(35deg);
+  }
+  90% {
+    transform: skew(15deg);
+  }
+}
+
+@keyframes colorShift {
+  0%,
+  100% {
+    color: rgb(255, 0, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  66% {
+    color: rgb(8, 0, 255);
+  }
+}
+
+h1 > * {
+  display: inline-block;
+  animation: colorShift 3s infinite;
+}
+h1 > *:nth-child(2n) {
+  animation-delay: 0.6s;
+  animation-direction: alternate;
+}
+h1 > *:nth-child(3n) {
+  animation-delay: 0.4s;
+  animation-direction: reverse;
+}

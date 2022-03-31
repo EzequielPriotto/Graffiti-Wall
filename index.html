@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>eventos del DOM</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+ <link rel="stylesheet" href="./styles/main.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="alta-graffiti">
+        <h1>
+          <span>G</span>
+          <span>r</span>
+          <span>a</span>
+          <span>f</span>
+          <span>f</span>
+          <span>i</span>
+          <span>t</span>
+          <span>i</span>
+        </h1>
+
+        <form>
+          <fieldset>
+            <legend>Nuevo Mensaje</legend>
+            <!-- generar los inputs con sus labels -->
+            <label>
+              <input type="text" name="textBtn" id="textBtn" required>
+             
+            </label>
+            <label>
+              <input type="color" name="textBtn" id="colorBtn" required>
+
+             
+            </label>
+            <input type="checkbox" name="seleccionInput" id="is-poster" >
+            <label for="is-poster">Como </label>
+          </fieldset>
+          <button type="submit">Aceptar</button>
+        </form>
+        <button type="submit" id="deleteAll">Borrar TODO</button>
+      </div>
+
+      <div id="wall">
+        <div class="mensaje poster">
+          <span class="close">&times;</span>
+          <p>
+            Poster demo 😎👌📄
+          </p>
+        </div>
+        <div class="mensaje graffiti">
+          <span class="close">&times;</span>
+          <p>
+            Graffiti demo 😎👌🥫🎨
+          </p>
+        </div>
+      </div>
+
+      <!-- end of wrapper -->
+    </div>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
