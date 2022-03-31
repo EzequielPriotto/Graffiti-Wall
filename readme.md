@@ -1,5 +1,9 @@
 # Prácticas DOM - Eventos
 
+https://ezequielpriotto.github.io/Graffiti-Wall/
+
+
+
 ## 📜 Introducción
 
 Se incluyen en este repositorio:
@@ -34,14 +38,3 @@ En el archivo main.js definir las funciones, variables y métodos para que el pr
 
 
 ---
-
-## 🔮 Aclaración
-
-Si algún punto ya está resuelto mediante el código HTML o CSS provisto, desestimarlo de la lista de tareas.
-
----
-
-## 🔗 Links
-- https://www.w3schools.com/js/js_events.asp
-- https://www.w3schools.com/jsref/dom_obj_event.asp
-- https://developer.mozilla.org/es/docs/Web/Events
