@@ -15,7 +15,9 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: blueviolet;
+  
+  
+  
 }
 h1 {
   font-family: "Sedgwick Ave Display", cursive;
@@ -26,7 +28,7 @@ h1 {
 #wall {
   height: 100%;
   width: 100%;
-  background: url("../img/brickwall.jpg");
+  /* background: url("../img/brickwall.png"); */
   /* background: url("../img/brickwall2.jpg"); */
   background-size: cover;
   display: grid;
@@ -35,9 +37,16 @@ h1 {
   grid-template-columns: repeat(auto-fill, minmax(min(12rem, 100%), 1fr));
   grid-auto-rows: 200px;
   overflow: auto;
-  box-shadow: 0px 0px 20px rgb(32, 32, 32);
+  /* box-shadow: 0px 0px 20px rgb(32, 32, 32); */
 }
-
+body{
+  background: url("../img/brickwall2.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
 .mensaje {
   position: relative;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
@@ -78,6 +87,9 @@ h1 {
   transition: transform 0.4s;
   z-index: 9;
 }
+
+
+
 
 #alta-graffiti {
   width: 100%;
@@ -146,6 +158,96 @@ h1 {
   content: ' poster 📄';
 }
 
+/* From cssbuttons.io by @barisdogansutcu */
+form button {
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  border-radius: 3px;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+  background-color: #2ecc71;
+  border: none;
+  border-bottom: 5px solid #27ae60;
+  text-shadow: 0px -2px #27ae60;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+ }
+ 
+ form button:hover, form button:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  border-bottom: 1px solid #2ecc71;
+ }
+
+
+ form span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border: 0px solid transparent;
+  background-color: rgba(100,77,237,0.08);
+  border-radius: 1.25em;
+  transition: all 0.2s linear;
+ }
+ 
+ form span:hover {
+  box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+   8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+   17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+   36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+   99px 72px 143px rgba(0, 0, 0, 0.08);
+ }
+
+ 
+ .tooltip {
+  position: relative;
+  display: inline-block;
+ }
+ 
+ .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 4em;
+  background-color: rgba(0, 0, 0, 0.253);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 110%;
+ }
+ 
+ .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+ }
+ 
+ .tooltip:hover .tooltiptext {
+  visibility: visible;
+ }
+
+
+
+
+
+
+
+
+
+
 
 
 /* MEDIA QUERIES */
@@ -158,6 +260,13 @@ h1 {
   }
 }
 @media (min-width: 992px) {
+  body{
+    background: url("../img/brickwall.png");
+    background-repeat: no-repeat;  
+    background-position: center;
+    background-size: cover;
+  
+  }
   #wall {
     width: 60%;
   }

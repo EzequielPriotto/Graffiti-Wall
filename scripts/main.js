@@ -83,6 +83,7 @@
 
 const formulario = document.querySelector('form');
 const divGrafiti = document.querySelector('#wall');
+const btnTipoImpresion = document.getElementById('is-poster')
 
 
 const deleteAll = () => divGrafiti.innerHTML = "";
@@ -96,13 +97,12 @@ formulario.addEventListener('submit', (event)=>{
 
 function generarDiv(){
     let tarjeta = document.createElement('div');
-    let claseImpresion = document.getElementById('is-poster')
     tarjeta.classList.add(`mensaje`);
-    claseImpresion.checked ? tarjeta.classList.add(`poster`) : tarjeta.classList.add(`graffiti`)
+    btnTipoImpresion.checked ? tarjeta.classList.add(`poster`) : tarjeta.classList.add(`graffiti`)
     
     
     let colorback = document.getElementById('colorBtnBack')
-    claseImpresion.checked ? tarjeta.style.backgroundColor = `${colorback.value}` : "" 
+    btnTipoImpresion.checked ? tarjeta.style.backgroundColor = `${colorback.value}` : "" 
   
     let texto = document.getElementById('textBtn')
     
